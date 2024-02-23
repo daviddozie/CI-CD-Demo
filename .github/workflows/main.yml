@@ -24,10 +24,26 @@ jobs:
         - name: Install dependencies
           run: npm install
 
+  test:
+      needs: build
+      runs-on: ubuntu-latest 
+      
+      steps:
+        - uses:  actions/checkout@v2
+        
+        - name: Setup Node
+          uses: actions/setup-node@v1
+          with:
+            node-version: ${{ matrix.node-version }}
+            
+        - name: Install dependencies
+          run: npm install 
+
         - name: Run the tests
           run: npm test
 
   deploy:
+      needs: test
       runs-on: ubutu-lastest
 
       steps:
