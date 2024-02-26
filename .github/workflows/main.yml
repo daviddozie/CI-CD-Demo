@@ -50,6 +50,4 @@ jobs:
         - uses: actions/setup-node@v1
 
         - name: Deploy
-          run: echo "We Are Live!!"
-          
-        
+          run: echo "We Are Live!!"   
