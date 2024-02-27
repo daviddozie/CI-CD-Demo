@@ -2,22 +2,24 @@ name : Cypress Testing
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
   pull_request:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
-  cypress-run:
+  run-cypress:
     runs-on: ubuntu-latest
+      
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-     
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
-        with:
-          build: npm run build
-          start: npm run test
+      
+      - name: Install Dependencies
+        run: npm install
+      
+      - name: Build
+        run: npm run build
+      
+      - name: Start Preview
+        run: npm run preview
