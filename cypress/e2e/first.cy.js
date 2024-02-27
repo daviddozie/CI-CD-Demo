@@ -1,7 +1,7 @@
 describe('template spec', () => {
   it('passes', () => {
     cy.visit('http://example.com');
-    cy.contain('Example Domain');
+    cy.contains('Example Domain');
   });
 
   it('check the title', () => {
