@@ -17,5 +17,7 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    // Enforce the use of single quotes
+    quotes: ['error', 'single'],
   },
-}
+};
